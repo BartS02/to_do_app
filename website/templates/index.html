@@ -6,31 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://kit.fontawesome.com/c8f68374b8.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div>
         <h1>To Do List</h1>
+    
+    <a href="https://github.com/BartS02"target="_blank"
+        i class="fa-brands fa-github"></i>
+    </a>
+        
+            
 
-        <form action="/add" method="post">
-            <div>
-                <label>Todo task</label>
-                <input type="text" name="task" placeholder="Enter a Task">
-                <button type="submit">Add a Task</button>
+            
+          </div>
+          
+        
+        <div class="outerbox">
+            <div class="innerbox">
+                <form action="/add" method="post">
+                    <div>
+                        <label>Todo task</label>
+                        <input type="text" name="task" placeholder="Enter a Task">
+                        <button type="submit">Add a Task</button>
+                    </div>
+                </form>
             </div>
-        </form>
+            <div class="innerbox">
+                <hr>
+                {% for todo in todo_list %}
+                <p>{{todo.id}} : {{todo.task}} : {{todo.date.strftime("%d/%m/%y")}}</p>
+                {% if todo.complete==False %}
+                <p>Task Incomplete. <a href="/update/{{todo.id}}">Mark as complete?</a></p>
+                {% else %}
+                <p>Task Complete</p>
+                {% endif %}
+                <a href="/delete/{{todo.id}}"> Delete this task?</a>
+                {% endfor %}
+            </div>
+        </div>
 
-        <hr>
-        {% for todo in todo_list %}
-        <p>{{todo.id}} : {{todo.task}} </p>
-        {% if todo.complete==False %}
-        <p>Task Incomplete. <a href="/update/{{todo.id}}">Mark as complete?</a></p>
-        {% else %}
-        <p>Task Complete</p>
-        {% endif %}
-        <a href="/delete/{{todo.id}}"> Delete this task?</a>
-        {% endfor %}
     </div>
+
 </body>
 
 </html>

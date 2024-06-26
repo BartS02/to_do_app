@@ -1,5 +1,5 @@
 body{
-    background:rgb(233, 6, 138)
+    background: black
     
 }
 
@@ -8,4 +8,21 @@ h1{
     font-family: "consolas";
     font-style: italic;
     font-weight: bold;
+}
+.outerbox{
+    display:flex;
+    background-color: blueviolet;
+    justify-content: space-evenly;
+    color: white;
+    text-decoration: none;
+}
+.innerbox{
+    text-decoration: none;
+    text-decoration-color: blue;
+}
+
+.fa-github{
+    color: red;
+    
+    
 }
