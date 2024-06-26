@@ -8,6 +8,14 @@ h1{
     font-family: "consolas";
     font-style: italic;
     font-weight: bold;
+    text-decoration: underline;
+}
+
+h2{
+    color: turquoise;
+    font-family: "consolas";
+    font-style: italic;
+    font-weight: bold;
 }
 .outerbox{
     display:flex;
