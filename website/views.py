@@ -19,7 +19,8 @@ def add():
         new_todo = Todo(task=task,categories=categories)
         db.session.add(new_todo)
         db.session.commit()
-        return redirect(url_for("my_view.home"))
+        message = "Task Added"
+        return redirect(url_for("my_view.home", message = message))
     except:
         message = "There was an error adding your task. Please try again"
         return redirect(url_for("my_view.home", message=message))
