@@ -37,6 +37,9 @@
                             <option value="Work">Work</option>
                           </select>
                         <button type="submit">Add a Task</button>
+                        {% if message %}
+                        <p>{{message}}</p>
+                        {% endif %}
                     </div>
                 </form>
             </div>

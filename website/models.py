@@ -1,5 +1,6 @@
 from . import db
 from datetime import datetime
+#!This class is used to inherit from our db and allows us to map out properties to db columns
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key = True)

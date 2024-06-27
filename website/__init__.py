@@ -1,6 +1,6 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-
+#!We configure a new database connection using SQLAlchemy and SQlite 
 db = SQLAlchemy()
 
 def create_app():
