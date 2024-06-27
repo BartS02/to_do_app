@@ -12,7 +12,8 @@ def home():
 @my_view.route("/add", methods=["POST"])
 def add():
     task = request.form.get("task")
-    new_todo = Todo(task=task)
+    categories = request.form.get("categories")
+    new_todo = Todo(task=task,categories=categories)
     db.session.add(new_todo)
     db.session.commit()
     return redirect(url_for("my_view.home"))

@@ -6,3 +6,4 @@ class Todo(db.Model):
     task = db.Column(db.String(300), unique = True)
     complete = db.Column(db.Boolean, default= False)
     date = db.Column(db.DateTime, default=datetime.now)
+    categories = db.Column(db.String(50))

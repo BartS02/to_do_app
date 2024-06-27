@@ -30,6 +30,12 @@
                     <div>
                         <label>Todo task</label>
                         <input type="text" name="task" placeholder="Enter a Task">
+                        <select name="categories" id="categories">
+                            <option value="Home">Home</option>
+                            <option value="Health">Health</option>
+                            <option value="Appointments">Appointments</option>
+                            <option value="Work">Work</option>
+                          </select>
                         <button type="submit">Add a Task</button>
                     </div>
                 </form>
@@ -37,7 +43,7 @@
             <div class="innerbox">
                 <hr>
                 {% for todo in todo_list %}
-                <p>{{todo.id}} : {{todo.task}} : {{todo.date.strftime("%d/%m/%y")}}</p>
+                <p>{{todo.id}} : {{todo.task}} : {{todo.date.strftime("%d/%m/%y")}} : {{todo.categories}}</p>
                 {% if todo.complete==False %}
                 <p>Task Incomplete. <a href="/update/{{todo.id}}">Mark as complete?</a></p>
                 {% else %}
