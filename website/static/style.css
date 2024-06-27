@@ -21,16 +21,23 @@ h2{
     display:flex;
     background-color: blueviolet;
     justify-content: space-evenly;
-    color: white;
+    color: black;
     text-decoration: none;
+    border-radius: 2px;
 }
 .innerbox{
     text-decoration: none;
     text-decoration-color: blue;
+    border-color: white;
+
 }
 
 .fa-github{
     color: red;
     
     
+}
+.category{
+    background-color: greenyellow;
+    text-decoration: underline;
 }
